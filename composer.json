@@ -1,0 +1,10 @@
+{
+    "name": "crlspdx/phptodo",
+    "description": "um aplicativo todo",
+    "type": "project",
+    "license": "none",
+    "require": {
+        "phpoffice/phpspreadsheet": "^4.3",
+        "maennchen/zipstream-php": "3.0.*"
+    }
+}
