@@ -1,5 +1,7 @@
 vendor
 
+vendor/*
+
 *.db
 
 teste.php
