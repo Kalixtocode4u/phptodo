@@ -11,13 +11,14 @@ class Tarefas{
 
     public function __construct(SQLite3 $conexao){
         $this->conexao = $conexao;
+        $this->criar_tabela_tarefas_se_nao_existir();
     }
 
     public function criar_tabela_tarefas_se_nao_existir(){
-        if($this->conexao->exec('CREATE TABLE IF NOT EXISTS tarefas (id INTEGER PRIMARY KEY autoincrement, nome VARCHAR(25),descricao VARCHAR ,prazo VARCHAR ,prioridade VARCHAR ,concluido VARCHAR);')){
-            echo "Tabela tarefas criada com sucesso\n";
-        }else{
-            echo "Falha em criar a tabela\n";
+        try {
+            $this->conexao->exec('CREATE TABLE IF NOT EXISTS tarefas (id INTEGER PRIMARY KEY autoincrement, nome VARCHAR(25),descricao VARCHAR ,prazo VARCHAR ,prioridade VARCHAR ,concluido VARCHAR);');
+        } catch (Exception $e) {
+            echo 'Erro: '. $e->getMessage();
         }
     }
 
