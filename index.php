@@ -44,12 +44,12 @@ $listadeTarefa = $classe->buscar_tarefas();
                     <legend>Defina uma tarefa</legend>
                     <label>
                         Nome:
-                        <input type="text" name="nome" id="">
+                        <input type="text" name="nome" id="" required>
                     </label>
                     
                     <fieldset>
                         <legend>Descrição:</legend>
-                        <textarea name="descricao" id="" cols="30" rows="10"></textarea>
+                        <textarea name="descricao" id="" cols="30" rows="10" required></textarea>
                     </fieldset>
 
                     <fieldset>
@@ -66,12 +66,17 @@ $listadeTarefa = $classe->buscar_tarefas();
 
                     <label>
                         Prazo:
-                        <input type="date" name="prazo">
+                        <input type="date" name="prazo" required>
                     </label>
                     <br>
                     <label>
                         concluido:
-                        <input type="checkbox" name="concluido">
+                        <input type="checkbox" name="concluido" required>
+                    </label>
+                    <br>
+                    <label>
+                        Lembrete por Email:
+                        <input type="checkbox" name="lembrete" required>
                     </label>
                     <br>
                     <button type="submit" name="submit">Enviar</button>

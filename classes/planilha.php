@@ -15,7 +15,6 @@ class Planilha{
         $instancia->iniciar();
         return $instancia;
     }
-    //
     public static function comArquivo(string $path){
         $instancia = new Planilha();
         $instancia->carregaPlanilha($path);
@@ -24,16 +23,6 @@ class Planilha{
         $instancia->setTamanho($tam);
         return $instancia;
     }
-
-    // getters e setters
-    public function getTamanho(){
-        return $this::$tamanho;
-    }
-    private function setTamanho(int $tamanho){
-        $this::$tamanho = $tamanho;
-    }
-
-    // Metodos
     private function iniciar(){
         $this->planilha = new Spreadsheet();
         $folha = $this->planilha->getActiveSheet();
@@ -54,6 +43,13 @@ class Planilha{
         // Aumenta o tamanho da linhas
         $this::$tamanho++;
     }
+
+    // getters e setters
+    private function setTamanho(int $tamanho){
+        $this::$tamanho = $tamanho;
+    }
+
+    // Metodos
 
     public function setLinha(string $nome, string $descricao, string $prioridade, string $prazo, string $concluido) {
         $i = $this::$tamanho + 1;
@@ -92,6 +88,7 @@ class Planilha{
         $xlsxSalvo->save("{$nome}.xlsx");
     }
 
+    // Metodos privados
     private function tamanhoPlanilha() : int{
         $i = 0;
 

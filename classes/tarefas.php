@@ -16,7 +16,7 @@ class Tarefas{
 
     public function criar_tabela_tarefas_se_nao_existir(){
         try {
-            $this->conexao->exec('CREATE TABLE IF NOT EXISTS tarefas (id INTEGER PRIMARY KEY autoincrement, nome VARCHAR(25),descricao VARCHAR ,prazo VARCHAR ,prioridade VARCHAR ,concluido VARCHAR);');
+            $this->conexao->exec('CREATE TABLE IF NOT EXISTS tarefas (id INTEGER PRIMARY KEY autoincrement, nome VARCHAR(255), descricao TEXT, prazo VARCHAR, prioridade VARCHAR, concluido VARCHAR);');
         } catch (Exception $e) {
             echo 'Erro: '. $e->getMessage();
         }

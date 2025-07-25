@@ -5,6 +5,6 @@
     "license": "none",
     "require": {
         "phpoffice/phpspreadsheet": "^4.3",
-        "maennchen/zipstream-php": "3.0.*"
+        "phpmailer/phpmailer": "^6.10"
     }
 }

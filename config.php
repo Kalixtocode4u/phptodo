@@ -1,0 +1,4 @@
+<?php
+
+// Definor  algumas variaveis
+
